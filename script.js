@@ -1,16 +1,23 @@
 function indexOfIgnoreCase(s1, s2) {
   // write your code here const lowerStr = str.toLowerCase();
-  const lowerSubStr = subStr.toLowerCase();
+ let ss1=s1.toLowerCase();
+	let ss2=s2.toLowerCase();
+	
+	let n1=s1.length;
+	let n2=s2.length;
+
+	for(let i=0;i<n1;i++)
+		{
+			let j=i+n2;
+			let s=ss1.substring(i,j);
   
-  // Use the indexOf method to find the first occurrence
-  return lowerStr.indexOf(lowerSubStr);
-}
+			if(s==ss2) 
+			{
+				return i;
+			}
+		}
 
-// Examples
-console.log(indexOfIgnoreCase("Hello World", "world"));  // 6
-console.log(indexOfIgnoreCase("apple", "Ple"));          // 2
-console.log(indexOfIgnoreCase("test", "aaa"));           // -1
-
+	return -1;
 }
 
 // Please do not change the code below
